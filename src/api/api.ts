@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const ACCESS_TOKEN: string =
-  "BQALLCHiqHrUZL8GCZu6QHMgvhhrHNOZnS9bhh09U1cmuKZqWyH-qlR99POEyeR32KXGGNCCtQoLNh-GArOTc85GP_KWtZTM1V39hP226W-pKlloVD-d";
+  "BQAuFhixS4xfDU2boc1JYWTfMHnaB2Y-CdmMVeNSNwXA_wVl234b0wnvUVIW2KjdIzYuxuOlu-OrWjgpISyWvRDR4zjO6yM6t00Ehl3OAdby_2tkTTd3";
 
 export const api = axios.create({
   baseURL: "https://api.spotify.com/v1",

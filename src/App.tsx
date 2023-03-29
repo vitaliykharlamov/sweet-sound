@@ -8,7 +8,7 @@ export const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/album" element={<AlbumPage />} />
+        <Route path="/album/:albumID" element={<AlbumPage />} />
       </Routes>
 
       <Player />
