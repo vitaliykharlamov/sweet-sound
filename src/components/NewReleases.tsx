@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { api } from "../api/api";
 
 interface NewReleasesInfo {
@@ -73,12 +78,23 @@ export const NewReleases = () => {
 
   return (
     <div>
-      <h1>NewReleases</h1>
+      <h1 className="text-orange-400 mb-5">NewReleases</h1>
 
-      <ul>
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={50}
+        slidesPerView={3}
+        navigation
+        pagination={{ clickable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+      >
         {newReleasesInfo.albums.items.map((item) => (
-          <li key={item.id} className="mb-3 border-2">
-            <Link to={`/album/${item.id}`}>
+          <SwiperSlide key={item.id}>
+            <Link
+              to={`/album/${item.id}`}
+              className="block border-2 border-cyan-500"
+            >
               <img src={item.images[item.images.length - 1].url} alt="" />
               <h3>{item.name}</h3>
               <p>
@@ -89,9 +105,9 @@ export const NewReleases = () => {
                 ))}
               </p>
             </Link>
-          </li>
+          </SwiperSlide>
         ))}
-      </ul>
+      </Swiper>
     </div>
   );
 };
