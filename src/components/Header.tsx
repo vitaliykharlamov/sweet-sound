@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import logo from "../assets/logo.svg";
 
-export const Header = () => {
+export const Header = (props) => {
   return (
-    <header className="bg-blue-500 flex justify-between items-center p-3">
-      <button className="block w-8 h-8">
+    <header className="bg-blue-500 bg-opacity-20 flex justify-between items-center p-3">
+      <button className="block w-8 h-8" onClick={props.heandlerSidebarOpen}>
         <IoMenu className="w-full h-full" />
       </button>
       <Link to={"/"} className="flex items-center gap-x-3">
